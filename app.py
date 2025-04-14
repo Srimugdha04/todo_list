@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from bson.objectid import ObjectId
-from db_config import users_collection, tasks_collection
 from datetime import datetime
 from pymongo import MongoClient
 app = Flask(__name__)
