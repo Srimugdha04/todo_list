@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 # Replace with your own MongoDB connection string if needed
-client = MongoClient("mongodb+srv://srimugdha:<db_password>@cluster0.p71ahgg.mongodb.net/")
+client = MongoClient("mongodb+srv://srimugdha:20srimugdha04@cluster0.p71ahgg.mongodb.net/")
 
 # Database and collections
 db = client['todo_app']
