@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ username }}!</h2>
+        <button onclick="location.href='{{ url_for('logout') }}'">Logout</button>
+
+        <form method="POST" action="{{ url_for('todo') }}">
+            <input type="text" name="task" placeholder="Add new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <h3>Your Tasks</h3>
+        <ul id="taskList">
+            {% for task in tasks %}
+                <li>
+                    {{ task['task_text'] }} 
+                    <small>({{ task['created_at'] }})</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
